@@ -1,7 +1,42 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <!--1.指定spring配置文件-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    <!--2.添加监听器通过spring配置文件启动spring容器-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!--3.配置springmvc的前端控制器-->
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--启动时优先级-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!--4.配置前端控制器映射的url-->
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <!--使控制器接受所有请求-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--5.配置使用rest风格的url 将post请求转化为指定的delete或put请求-->
+    <filter>
+        <filter-name>filter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <!--6.配置过滤的请求-->
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <!--过滤所有请求-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

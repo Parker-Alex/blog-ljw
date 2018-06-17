@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:contex="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--1.配置spring扫描的包-->
+    <contex:component-scan base-package="com.blog">
+        <!--扫描不包括注解的Controller包-->
+        <contex:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </contex:component-scan>
+
+    <!--2.导入数据库配置文件-->
+    <contex:property-placeholder location="classpath:db-config.properties"/>
+
+    <!--3.通过数据库配置文件配置数据库连接池-->
+    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="pooledDataSource"
+                p:jdbcUrl="${jdbc.jdbcUrl}"
+                p:driverClass="${jdbc.diverClass}"
+                p:user="${jdbc.user}"
+                p:password="${jdbc.password}"/>
+
+    <!--4.mybatis与spring整合 配置-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <!--引入数据源-->
+        <property name="dataSource" ref="pooledDataSource"/>
+        <!--指定映射文件位置-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!--指定mybatis全局配置文件位置-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+
+    <!--5.配置mybatis扫描器-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--指定扫描器扫描的接口包-->
+        <property name="basePackage" value="com.blog.dao"/>
+    </bean>
+
+    <!--6.配置事务管理器-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <!--指定事务管理的数据源-->
+        <property name="dataSource" ref="pooledDataSource"/>
+    </bean>
+
+    <!--7.配置支持注解的事务-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>
