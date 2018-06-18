@@ -1,6 +1,6 @@
 package com.blog.entity;
 
-public class admin {
+public class Admin {
     private Integer id;
 
     private String username;

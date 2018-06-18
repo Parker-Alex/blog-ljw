@@ -1,30 +1,30 @@
 package com.blog.dao;
 
-import com.blog.entity.adminLoginLog;
-import com.blog.entity.adminLoginLogExample;
+import com.blog.entity.AdminLoginLog;
+import com.blog.entity.AdminLoginLogExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface adminLoginLogMapper {
-    long countByExample(adminLoginLogExample example);
+public interface AdminLoginLogMapper {
+    long countByExample(AdminLoginLogExample example);
 
-    int deleteByExample(adminLoginLogExample example);
+    int deleteByExample(AdminLoginLogExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(adminLoginLog record);
+    int insert(AdminLoginLog record);
 
-    int insertSelective(adminLoginLog record);
+    int insertSelective(AdminLoginLog record);
 
-    List<adminLoginLog> selectByExample(adminLoginLogExample example);
+    List<AdminLoginLog> selectByExample(AdminLoginLogExample example);
 
-    adminLoginLog selectByPrimaryKey(Integer id);
+    AdminLoginLog selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") adminLoginLog record, @Param("example") adminLoginLogExample example);
+    int updateByExampleSelective(@Param("record") AdminLoginLog record, @Param("example") AdminLoginLogExample example);
 
-    int updateByExample(@Param("record") adminLoginLog record, @Param("example") adminLoginLogExample example);
+    int updateByExample(@Param("record") AdminLoginLog record, @Param("example") AdminLoginLogExample example);
 
-    int updateByPrimaryKeySelective(adminLoginLog record);
+    int updateByPrimaryKeySelective(AdminLoginLog record);
 
-    int updateByPrimaryKey(adminLoginLog record);
+    int updateByPrimaryKey(AdminLoginLog record);
 }

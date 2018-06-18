@@ -3,14 +3,14 @@ package com.blog.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class catalogExample {
+public class CatalogExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public catalogExample() {
+    public CatalogExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

@@ -1,0 +1,16 @@
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\admin.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\comment.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\article.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\dao\articleMapper.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\articleExample.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\catalog.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\adminExample.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\commentExample.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\adminLoginLogExample.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\dao\catalogMapper.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\catalogExample.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\dao\adminMapper.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\dao\commentMapper.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\entity\adminLoginLog.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\dao\adminLoginLogMapper.java
+D:\GitHub\blog-ljw\src\main\java\com\blog\test\MBGTest.java

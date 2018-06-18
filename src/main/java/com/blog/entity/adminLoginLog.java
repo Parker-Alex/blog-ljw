@@ -2,7 +2,7 @@ package com.blog.entity;
 
 import java.util.Date;
 
-public class adminLoginLog {
+public class AdminLoginLog {
     private Integer id;
 
     private Integer adminId;

@@ -21,11 +21,13 @@
     <contex:property-placeholder location="classpath:db-config.properties"/>
 
     <!--3.通过数据库配置文件配置数据库连接池-->
-    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="pooledDataSource"
-                p:jdbcUrl="${jdbc.jdbcUrl}"
-                p:driverClass="${jdbc.diverClass}"
-                p:user="${jdbc.user}"
-                p:password="${jdbc.password}"/>
+    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="pooledDataSource">
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
+        <property name="driverClass" value="${jdbc.diverClass}"/>
+        <property name="user" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
 
     <!--4.mybatis与spring整合 配置-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
@@ -39,6 +41,7 @@
 
     <!--5.配置mybatis扫描器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>-->
         <!--指定扫描器扫描的接口包-->
         <property name="basePackage" value="com.blog.dao"/>
     </bean>

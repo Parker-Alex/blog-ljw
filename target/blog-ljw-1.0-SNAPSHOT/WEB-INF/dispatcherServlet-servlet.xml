@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--1.配置springmvc控制器扫描的包 关闭默认过滤器-->
+    <context:component-scan base-package="com.blog" use-default-filters="false">
+        <!--配置只扫描有Controller注解的包-->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--2.配置视图解析器 使用p命名空间配置-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp"/>
+
+    <!--3.开启基于springmvc的注解配置 不需配置注解处理器映射器和注解处理器适配器-->
+    <mvc:annotation-driven/>
+
+    <!--4.开启springmvc的默认请求处理 静态资源交给web服务器的servlet处理-->
+    <mvc:default-servlet-handler/>
+</beans>

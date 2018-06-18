@@ -1,6 +1,6 @@
 package com.blog.entity;
 
-public class catalog {
+public class Catalog {
     private Integer id;
 
     private String name;

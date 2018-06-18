@@ -1,36 +1,36 @@
 package com.blog.dao;
 
-import com.blog.entity.catalog;
-import com.blog.entity.catalogExample;
+import com.blog.entity.Catalog;
+import com.blog.entity.CatalogExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface catalogMapper {
-    long countByExample(catalogExample example);
+public interface CatalogMapper {
+    long countByExample(CatalogExample example);
 
-    int deleteByExample(catalogExample example);
+    int deleteByExample(CatalogExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(catalog record);
+    int insert(Catalog record);
 
-    int insertSelective(catalog record);
+    int insertSelective(Catalog record);
 
-    List<catalog> selectByExampleWithBLOBs(catalogExample example);
+    List<Catalog> selectByExampleWithBLOBs(CatalogExample example);
 
-    List<catalog> selectByExample(catalogExample example);
+    List<Catalog> selectByExample(CatalogExample example);
 
-    catalog selectByPrimaryKey(Integer id);
+    Catalog selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") catalog record, @Param("example") catalogExample example);
+    int updateByExampleSelective(@Param("record") Catalog record, @Param("example") CatalogExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") catalog record, @Param("example") catalogExample example);
+    int updateByExampleWithBLOBs(@Param("record") Catalog record, @Param("example") CatalogExample example);
 
-    int updateByExample(@Param("record") catalog record, @Param("example") catalogExample example);
+    int updateByExample(@Param("record") Catalog record, @Param("example") CatalogExample example);
 
-    int updateByPrimaryKeySelective(catalog record);
+    int updateByPrimaryKeySelective(Catalog record);
 
-    int updateByPrimaryKeyWithBLOBs(catalog record);
+    int updateByPrimaryKeyWithBLOBs(Catalog record);
 
-    int updateByPrimaryKey(catalog record);
+    int updateByPrimaryKey(Catalog record);
 }

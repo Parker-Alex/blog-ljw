@@ -1,30 +1,30 @@
 package com.blog.dao;
 
-import com.blog.entity.admin;
-import com.blog.entity.adminExample;
+import com.blog.entity.Admin;
+import com.blog.entity.AdminExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface adminMapper {
-    long countByExample(adminExample example);
+public interface AdminMapper {
+    long countByExample(AdminExample example);
 
-    int deleteByExample(adminExample example);
+    int deleteByExample(AdminExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(admin record);
+    int insert(Admin record);
 
-    int insertSelective(admin record);
+    int insertSelective(Admin record);
 
-    List<admin> selectByExample(adminExample example);
+    List<Admin> selectByExample(AdminExample example);
 
-    admin selectByPrimaryKey(Integer id);
+    Admin selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") admin record, @Param("example") adminExample example);
+    int updateByExampleSelective(@Param("record") Admin record, @Param("example") AdminExample example);
 
-    int updateByExample(@Param("record") admin record, @Param("example") adminExample example);
+    int updateByExample(@Param("record") Admin record, @Param("example") AdminExample example);
 
-    int updateByPrimaryKeySelective(admin record);
+    int updateByPrimaryKeySelective(Admin record);
 
-    int updateByPrimaryKey(admin record);
+    int updateByPrimaryKey(Admin record);
 }

@@ -1,36 +1,36 @@
 package com.blog.dao;
 
-import com.blog.entity.comment;
-import com.blog.entity.commentExample;
+import com.blog.entity.Comment;
+import com.blog.entity.CommentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface commentMapper {
-    long countByExample(commentExample example);
+public interface CommentMapper {
+    long countByExample(CommentExample example);
 
-    int deleteByExample(commentExample example);
+    int deleteByExample(CommentExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(comment record);
+    int insert(Comment record);
 
-    int insertSelective(comment record);
+    int insertSelective(Comment record);
 
-    List<comment> selectByExampleWithBLOBs(commentExample example);
+    List<Comment> selectByExampleWithBLOBs(CommentExample example);
 
-    List<comment> selectByExample(commentExample example);
+    List<Comment> selectByExample(CommentExample example);
 
-    comment selectByPrimaryKey(Integer id);
+    Comment selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") comment record, @Param("example") commentExample example);
+    int updateByExampleSelective(@Param("record") Comment record, @Param("example") CommentExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") comment record, @Param("example") commentExample example);
+    int updateByExampleWithBLOBs(@Param("record") Comment record, @Param("example") CommentExample example);
 
-    int updateByExample(@Param("record") comment record, @Param("example") commentExample example);
+    int updateByExample(@Param("record") Comment record, @Param("example") CommentExample example);
 
-    int updateByPrimaryKeySelective(comment record);
+    int updateByPrimaryKeySelective(Comment record);
 
-    int updateByPrimaryKeyWithBLOBs(comment record);
+    int updateByPrimaryKeyWithBLOBs(Comment record);
 
-    int updateByPrimaryKey(comment record);
+    int updateByPrimaryKey(Comment record);
 }

@@ -1,36 +1,36 @@
 package com.blog.dao;
 
-import com.blog.entity.article;
-import com.blog.entity.articleExample;
+import com.blog.entity.Article;
+import com.blog.entity.ArticleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface articleMapper {
-    long countByExample(articleExample example);
+public interface ArticleMapper {
+    long countByExample(ArticleExample example);
 
-    int deleteByExample(articleExample example);
+    int deleteByExample(ArticleExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(article record);
+    int insert(Article record);
 
-    int insertSelective(article record);
+    int insertSelective(Article record);
 
-    List<article> selectByExampleWithBLOBs(articleExample example);
+    List<Article> selectByExampleWithBLOBs(ArticleExample example);
 
-    List<article> selectByExample(articleExample example);
+    List<Article> selectByExample(ArticleExample example);
 
-    article selectByPrimaryKey(Integer id);
+    Article selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") article record, @Param("example") articleExample example);
+    int updateByExampleSelective(@Param("record") Article record, @Param("example") ArticleExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") article record, @Param("example") articleExample example);
+    int updateByExampleWithBLOBs(@Param("record") Article record, @Param("example") ArticleExample example);
 
-    int updateByExample(@Param("record") article record, @Param("example") articleExample example);
+    int updateByExample(@Param("record") Article record, @Param("example") ArticleExample example);
 
-    int updateByPrimaryKeySelective(article record);
+    int updateByPrimaryKeySelective(Article record);
 
-    int updateByPrimaryKeyWithBLOBs(article record);
+    int updateByPrimaryKeyWithBLOBs(Article record);
 
-    int updateByPrimaryKey(article record);
+    int updateByPrimaryKey(Article record);
 }

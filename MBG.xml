@@ -43,11 +43,11 @@
         </javaClientGenerator>
 
         <!--指定数据库中每张表的生成策略-->
-        <table tableName="admin_log" domainObjectName="admin"/>
-        <table tableName="admin_login_log" domainObjectName="adminLoginLog"/>
-        <table tableName="article" domainObjectName="article"/>
-        <table tableName="catalog" domainObjectName="catalog"/>
-        <table tableName="comment" domainObjectName="comment"/>
+        <table tableName="admin_log" domainObjectName="Admin"/>
+        <table tableName="admin_login_log" domainObjectName="AdminLoginLog"/>
+        <table tableName="article" domainObjectName="Article"/>
+        <table tableName="catalog" domainObjectName="Catalog"/>
+        <table tableName="comment" domainObjectName="Comment"/>
 
     </context>
 </generatorConfiguration>

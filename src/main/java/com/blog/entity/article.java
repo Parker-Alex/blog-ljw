@@ -2,7 +2,7 @@ package com.blog.entity;
 
 import java.util.Date;
 
-public class article {
+public class Article {
     private Integer id;
 
     private String title;

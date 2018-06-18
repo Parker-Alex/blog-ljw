@@ -3,14 +3,14 @@ package com.blog.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class adminExample {
+public class AdminExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public adminExample() {
+    public AdminExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

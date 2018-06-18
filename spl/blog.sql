@@ -50,3 +50,6 @@ create table if not exists comment(
   email varchar(30) not null comment '评论人邮箱',
   primary key (id)
 )engine=MyISAM default charset utf8 auto_increment=1;
+
+insert admin_log values (1,"jack",123456);
+insert admin_log values (null,"mike",123);
