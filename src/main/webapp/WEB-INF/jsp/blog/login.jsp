@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: asus
   Date: 2018/6/18
-  Time: 15:05
+  Time: 16:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<html>
 <head>
-    <title>主页</title>
+    <title>登录界面</title>
     <meta charset="utf-8">
     <%
         pageContext.setAttribute("PATH",request.getContextPath());
@@ -21,7 +21,7 @@
             /*color: rgba(255, 255, 255, 0.65);*/
             color: black;
             /*background-color: #24292e;*/
-            <%--background-image: url(${PATH}/images/star-bg.svg),linear-gradient(#191c20, #24292e 15%);--%>
+        <%--background-image: url(${PATH}/images/star-bg.svg),linear-gradient(#191c20, #24292e 15%);--%>
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
             font-size: 14px;
             line-height: 1.5;
@@ -41,7 +41,7 @@
 <body>
     <header>
         <div class="pos-f-t">
-            <div class="collapse show" id="navbarToggleExternalContent">
+            <div class="collapse" id="navbarToggleExternalContent">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
                     <a class="navbar-brand" href="/index.jsp">主页</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,8 +86,72 @@
         </div>
     </header>
 
+    <div class="container justify-content-center">
+        <div class="row">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">Id and Password</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Id" id="login_id" name="id">
+                <input type="password" class="form-control" placeholder="Password" id="login_password" name="password">
+            </div>
+        </div>
+        <div class="row justify-content-center p-1 mb-1" id="login_alert" role="alert">
+            <%--<p id="login_alert"></p>--%>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-secondary btn-block" id="login_btn">登录</button>
+        </div>
+    </div>
+
     <footer class="text-center">
         <p>© 2018 ljw. web</p>
     </footer>
+
+    <script type="text/javascript">
+        $("#login_btn").click(function () {
+            if ($("#login_id").val() == '' && $("#login_password").val() == '') {
+                $("#login_alert").removeClass("alert-danger")
+                    .addClass("alert alert-warning")
+                    .text("Id和密码都不能为空!!!");
+            }else if ($("#login_id").val() == '') {
+                $("#login_alert").removeClass("alert-danger")
+                    .addClass("alert alert-warning")
+                    .text("Id不能为空!!!");
+            }else if ($("#login_password").val() == '') {
+                $("#login_alert").removeClass("alert-danger")
+                    .addClass("alert alert-warning")
+                    .text("密码不能为空!!!");
+            }else if (isNaN($("#login_id").val())) {
+                $("#login_alert").removeClass("alert-danger")
+                    .addClass("alert alert-warning")
+                    .text("Id必须为数字!!!");
+            }else{
+                $.ajax({
+                    url:"${PATH}/admin/login",
+                    type:"POST",
+                    data:{
+                        id:$("#login_id").val(),
+                        password:$("#login_password").val()
+                    },
+                    dataType:"json",
+                    success:function (result) {
+                        // alert(result.stateCode);
+                        if (result.stateCode == 0) {
+                            $("#login_alert").removeClass("alert-warning")
+                                .addClass("alert alert-danger")
+                                .text("没有该用户!!!");
+                        }else if (result.stateCode == 1) {
+                            $("#login_alert").removeClass("alert-warning")
+                                .addClass("alert alert-danger")
+                                .text("密码错误!!!");
+                        }else {
+                            window.location.href="/admin/main";
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

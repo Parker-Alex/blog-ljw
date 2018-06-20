@@ -19,7 +19,7 @@
     <style>
         body{
             /*color: rgba(255, 255, 255, 0.65);*/
-            color: #fd7e14;
+            color: black;
             /*background-color: #24292e;*/
             <%--background-image: url(${PATH}/images/star-bg.svg),linear-gradient(#191c20, #24292e 15%);--%>
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -35,7 +35,6 @@
             height:50px;   /* footer的高度一定要是固定值*/
             position:absolute;
             bottom:0px;
-            color: black;
         }
     </style>
 </head>
@@ -43,8 +42,8 @@
     <header>
         <div class="pos-f-t">
             <div class="collapse show" id="navbarToggleExternalContent">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                    <a class="navbar-brand" href="/index.jsp">主页</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -55,7 +54,7 @@
                                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="/login">登录</a>
+                                <a class="nav-link" href="/blog/login">登录</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,16 +78,16 @@
                     </div>
                 </nav>
             </div>
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-dark bg-secondary">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
-
         </div>
     </header>
+
     <footer class="text-center">
-        <p>© 2018 LJW. BLOG</p>
+        <p>© 2018 ljw. web</p>
     </footer>
 </body>
 </html>

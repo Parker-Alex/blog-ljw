@@ -53,3 +53,5 @@ create table if not exists comment(
 
 insert admin_log values (1,"jack",123456);
 insert admin_log values (null,"mike",123);
+
+select * from admin_login_log where admin_id=1 order by id desc ;

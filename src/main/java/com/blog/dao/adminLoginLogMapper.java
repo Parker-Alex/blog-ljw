@@ -27,4 +27,8 @@ public interface AdminLoginLogMapper {
     int updateByPrimaryKeySelective(AdminLoginLog record);
 
     int updateByPrimaryKey(AdminLoginLog record);
+
+    List<AdminLoginLog> getAllLogin(Integer adminId);
+
+    int getCountByAdminId(int adminId);
 }

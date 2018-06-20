@@ -193,4 +193,17 @@
       date = #{date,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!--自定义的通过adminId查询该用户Id的所有登录记录语句-->
+  <select id="getAllLogin" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from admin_login_log
+    where admin_id = #{adminId,jdbcType=INTEGER}
+    order by id desc
+    limit 2
+  </select>
+  <!--自定义的通过adminId查询该Id的登录次数-->
+  <select id="getCountByAdminId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select count(*) from admin_login_log where admin_id=#{adminId,jdbcType=INTEGER}
+  </select>
 </mapper>

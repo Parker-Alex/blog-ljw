@@ -1,5 +1,7 @@
 package com.blog.entity;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AdminLoginLog {
@@ -41,5 +43,21 @@ public class AdminLoginLog {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getLastDate(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        String lastDate = dateFormat.format(date);
+        return lastDate;
+    }
+
+    @Override
+    public String toString() {
+        return "AdminLoginLog{" +
+                "id=" + id +
+                ", adminId=" + adminId +
+                ", ip='" + ip + '\'' +
+                ", date=" + date +
+                '}';
     }
 }
