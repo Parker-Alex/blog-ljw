@@ -20,8 +20,8 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-5">
-                <form>
+            <div class="col-8">
+                <form method="post" action="">
                     <div class="form-group">
                         <label for="title">文章标题</label>
                         <input type="text" class="form-control" name="title" id="title" placeholder="Example input">
@@ -34,26 +34,27 @@
                         <label for="describle">文章描述</label>
                         <input type="text" class="form-control" name="describle" id="describle" placeholder="Another input">
                     </div>
+                    <%--<div class="form-group">--%>
+                        <%--<label>类型：</label>--%>
+                        <%--<div class="custom-control custom-radio custom-control-inline">--%>
+                            <%--<input type="radio" id="customRadioInline1" name="catalogId" class="custom-control-input" value="0" checked="checked">--%>
+                            <%--<label class="custom-control-label" for="customRadioInline1">列表</label>--%>
+                        <%--</div>--%>
+                        <%--<div class="custom-control custom-radio custom-control-inline">--%>
+                            <%--<input type="radio" id="customRadioInline2" name="catalogId" class="custom-control-input" value="1">--%>
+                            <%--<label class="custom-control-label" for="customRadioInline2">留言</label>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
                     <div class="form-group">
-                        <label>类型：</label>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="catalogId" class="custom-control-input" value="0" checked="checked">
-                            <label class="custom-control-label" for="customRadioInline1">列表</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="catalogId" class="custom-control-input" value="1">
-                            <label class="custom-control-label" for="customRadioInline2">留言</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="describle">content</label>
+                        <label><strong>内容</strong></label>
                         <%--<input type="text" class="form-control" name="content" id="content" placeholder="Another input">--%>
-                        <textarea id="text1" style="width:100%; height:600px;"></textarea>
-                        <div id="div1">
-
+                        <div style="display: none">
+                            <textarea id="text1" style="width:100%; height:600px;"></textarea>
                         </div>
+                        <div id="div1"></div>
                     </div>
-                </form>
+                    <button type="submit" class="btn btn-success" id="btn_addArticle">提交</button>
+                    </form>
             </div>
         </div>
     </div>
@@ -65,9 +66,21 @@
             // 监控变化，同步更新到 textarea
             $text1.val(html)
         }
-        editor.create()
+        editor.create();
         // 初始化 textarea 的值
-        $text1.val(editor.txt.html())
+        $text1.val(editor.txt.html());
+
+        $("#btn_addArticle").click(function () {
+            // alert($("#text1").val());
+            <%--$.ajax({--%>
+               <%--url:"${PATH}/article/add_do",--%>
+               <%--data:{ title:"111"},--%>
+               <%--type:"POST",--%>
+               <%--success:function (result) {--%>
+                   <%--alert(result.title);--%>
+               <%--}--%>
+            <%--});--%>
+        });
     </script>
 </body>
 </html>

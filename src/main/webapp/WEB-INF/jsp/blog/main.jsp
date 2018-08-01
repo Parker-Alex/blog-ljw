@@ -193,11 +193,15 @@
                 title: title,
                 maxmin: true,
                 // shadeClose: true, //点击遮罩关闭层
-                area : ['70%' , '70%'],
+                area : ['70%' , '100%'],
                 content: url
             });
             layer.full(index);
         }
+        $("#btn_addArticle").click(function () {
+            alert("111");
+            layer.close();
+        });
     </script>
 </body>
 </html>
